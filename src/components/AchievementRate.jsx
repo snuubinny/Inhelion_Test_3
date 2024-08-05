@@ -1,4 +1,3 @@
-// AchievementRate.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -248,7 +247,7 @@ const AchievementRate = () => {
         setData(response.data);
 
         if (response.data.achievement_rate < 100) {
-          alert("달성률을 이행하지 못해 보호자에게 이메일이 전송됩니다.");
+          alert("달성률을 이행하지 못해 보호자에게 이메일이 전송되었어요.");
         }
       } catch (error) {
         console.error("Failed to fetch data:", error);

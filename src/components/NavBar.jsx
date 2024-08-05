@@ -118,13 +118,13 @@ const NavBar = () => {
   const currentPath = window.location.pathname;
   const [isExpanded, setIsExpanded] = React.useState(false);
 
+  // 홈 로고 클릭 핸들러
   const handleHomeLogoClick = () => {
     try {
       if (currentPath === "/LoginForm") {
         navigate("/LoginForm");
         return;
       }
-
       navigate(`/PostList/${userId}`);
     } catch (error) {
       console.error("Error checking token:", error);
@@ -132,13 +132,13 @@ const NavBar = () => {
     }
   };
 
+  // 프로필 편집 로고 클릭 핸들러
   const handleEditLogoClick = async () => {
     try {
       if (currentPath === "/LoginForm" || currentPath === "/RegisterForm") {
         alert("먼저 로그인을 진행해주세요!");
         return;
       }
-
       navigate(`/EditProfile/${userId}`);
     } catch (error) {
       console.error("Error checking token:", error);
@@ -156,6 +156,10 @@ const NavBar = () => {
 
   const handleAlarmTextClick = () => {
     navigate("/");
+  };
+
+  const handleDeveloperClick = () => {
+    navigate("/Developer");
   };
 
   return (
@@ -182,12 +186,12 @@ const NavBar = () => {
         </LogoWrapper>
         <AlarmContainer className="alarm-container">
           <Alarmtext onClick={handleAlarmTextClick}>
-            다했슈 소개 페이지 바로가기 <br />
-            구성원 소개
+            다했슈 소개 페이지 바로가기
           </Alarmtext>
+          <Alarmtext onClick={handleDeveloperClick}>구성원 소개</Alarmtext>
           <IconLinks>
             <a
-              href="https://blog.naver.com/snuubinny"
+              href="https://blog.naver.com/snuubinny/223537880667"
               target="_blank"
               rel="noopener noreferrer"
             >

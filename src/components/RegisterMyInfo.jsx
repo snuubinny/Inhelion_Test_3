@@ -1,5 +1,24 @@
 import styled from "styled-components";
 import axios from "axios";
+import { useState } from "react";
+import { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const AnimatedContainer = styled.div`
+  animation: ${fadeIn} 0.5s ease-out;
+  opacity: 1;
+  transform: translateY(0);
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -201,99 +220,102 @@ const RegisterMyInfo = ({
       alert("비밀번호가 일치합니다.");
     }
   };
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <Wrapper>
-      <ProfileContainer>
-        <Header>
-          <TextWrap>내정보</TextWrap>
-        </Header>
-        <FormBoxContainer>
-          <InputContainer>
-            <Label>이름:</Label>
-            <FormBox
-              type="text"
-              placeholder="피보호자의 이름을 입력하세요"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </InputContainer>
-          <DuplicateWrapper>
+    <AnimatedContainer isVisible={isVisible}>
+      <Wrapper>
+        <ProfileContainer>
+          <Header>
+            <TextWrap>내정보</TextWrap>
+          </Header>
+          <FormBoxContainer>
             <InputContainer>
-              <Label>아이디:</Label>
+              <Label>이름:</Label>
               <FormBox
                 type="text"
-                placeholder="아이디를 입력하세요"
-                value={identifier}
-                onChange={(e) => setIdentifier(e.target.value)}
+                placeholder="피보호자의 이름을 입력하세요"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
-              <DuplicateButton onClick={handleIdDuplicate}>
-                중복확인
-              </DuplicateButton>
             </InputContainer>
-          </DuplicateWrapper>
-          <InputContainer>
-            <Label>비밀번호:</Label>
-            <FormBox
-              type="password"
-              placeholder="비밀번호를 입력하세요"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </InputContainer>
-          <InputContainer>
-            <Label>비밀번호 확인:</Label>
-            <FormBox
-              type="password"
-              placeholder="비밀번호를 다시 입력하세요"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-            <DuplicateButton onClick={handlePasswordMatch}>
-              일치확인
-            </DuplicateButton>
-          </InputContainer>
-          <DuplicateWrapper>
+            <DuplicateWrapper>
+              <InputContainer>
+                <Label>아이디:</Label>
+                <FormBox
+                  type="text"
+                  placeholder="아이디를 입력하세요"
+                  value={identifier}
+                  onChange={(e) => setIdentifier(e.target.value)}
+                />
+                <DuplicateButton onClick={handleIdDuplicate}>
+                  중복확인
+                </DuplicateButton>
+              </InputContainer>
+            </DuplicateWrapper>
             <InputContainer>
-              <Label>이메일:</Label>
+              <Label>비밀번호:</Label>
               <FormBox
-                type="email"
-                placeholder="보호자의 이메일로 작성해주세요"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="password"
+                placeholder="비밀번호를 입력하세요"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
-              <DuplicateButton onClick={handleEmailDuplicate}>
-                중복확인
+            </InputContainer>
+            <InputContainer>
+              <Label>비밀번호 확인:</Label>
+              <FormBox
+                type="password"
+                placeholder="비밀번호를 다시 입력하세요"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <DuplicateButton onClick={handlePasswordMatch}>
+                일치확인
               </DuplicateButton>
             </InputContainer>
-          </DuplicateWrapper>
-          <InputContainer>
-            <Label>생년월일:</Label>
-            <FormBox
-              type="date"
-              placeholder="생년월일을 입력하세요"
-              value={birth}
-              onChange={(e) => setBirth(e.target.value)}
-            />
-          </InputContainer>
-          <SexButtonContainer>
-            <Label>성별:</Label>
-            <SexButton
-              $active={gender === "m"}
-              onClick={() => handleSexClick("m")}
-            >
-              남
-            </SexButton>
-            <SexButton
-              $active={gender === "w"}
-              onClick={() => handleSexClick("w")}
-            >
-              여
-            </SexButton>
-          </SexButtonContainer>
-        </FormBoxContainer>
-      </ProfileContainer>
-    </Wrapper>
+            <DuplicateWrapper>
+              <InputContainer>
+                <Label>이메일:</Label>
+                <FormBox
+                  type="email"
+                  placeholder="보호자의 이메일로 작성해주세요"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <DuplicateButton onClick={handleEmailDuplicate}>
+                  중복확인
+                </DuplicateButton>
+              </InputContainer>
+            </DuplicateWrapper>
+            <InputContainer>
+              <Label>생년월일:</Label>
+              <FormBox
+                type="date"
+                placeholder="생년월일을 입력하세요"
+                value={birth}
+                onChange={(e) => setBirth(e.target.value)}
+              />
+            </InputContainer>
+            <SexButtonContainer>
+              <Label>성별:</Label>
+              <SexButton
+                $active={gender === "m"}
+                onClick={() => handleSexClick("m")}
+              >
+                남
+              </SexButton>
+              <SexButton
+                $active={gender === "w"}
+                onClick={() => handleSexClick("w")}
+              >
+                여
+              </SexButton>
+            </SexButtonContainer>
+          </FormBoxContainer>
+        </ProfileContainer>
+      </Wrapper>
+    </AnimatedContainer>
   );
 };
 

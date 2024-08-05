@@ -106,7 +106,7 @@ const MyProfile = ({
   const handleLogoutClick = () => {
     localStorage.removeItem("token");
     alert("로그아웃이 진행됩니다.");
-    navigate("/");
+    navigate("/LoginForm");
   };
 
   const handleIconClick = () => {

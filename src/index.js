@@ -10,13 +10,14 @@ import Post from "./pages/Post";
 import PostList from "./pages/PostList";
 import RegisterForm from "./pages/RegisterForm";
 import Main from "./pages/Main";
+import Developer from "./pages/Developer";
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/Inhelion_Test_2">
+    <BrowserRouter basename="/Inhelion_Test_3">
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Main />} />
@@ -26,6 +27,7 @@ root.render(
           <Route path="post/:post_id" element={<Post />} />
           <Route path="PostList/:userId" element={<PostList />} />
           <Route path="RegisterForm" element={<RegisterForm />} />
+          <Route path="Developer" element={<Developer />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -137,7 +137,7 @@ const RecentPosts = () => {
       );
 
       if (response.status === 200) {
-        alert("이메일이 성공적으로 보내졌습니다");
+        alert("보호자에게 “보고싶어” 알림이 전송됩니다!");
       } else {
         throw new Error("이메일 전송에 실패하였습니다. 다시시도해주세요");
       }

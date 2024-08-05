@@ -6,16 +6,17 @@ import "./App.css";
 
 function App() {
   const location = useLocation();
-  const isMainPage = location.pathname === "/"; // Main 페이지의 경로가 '/'인 경우 nav와 footer없애기
+  const isMainPage = location.pathname === "/";
+  const isDeveloperPage = location.pathname === "/Developer";
 
   return (
     <>
-      {!isMainPage && <NavBar />}
+      {!isMainPage && !isDeveloperPage && <NavBar />}
       <ScrollToTop />
       <div className="outlet-background">
         <Outlet />
       </div>
-      {!isMainPage && <Footer />}
+      {!isMainPage && !isDeveloperPage && <Footer />}
     </>
   );
 }

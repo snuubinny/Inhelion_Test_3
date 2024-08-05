@@ -5,6 +5,24 @@ import styled from "styled-components";
 import footerLogo from "../img/Footer_Logo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const AnimatedContainer = styled.div`
+  animation: ${fadeIn} 0.5s ease-out;
+  opacity: 1;
+  transform: translateY(0);
+`;
 
 const RegisterWrap = styled.div`
   display: flex;
@@ -82,10 +100,11 @@ const RegisterForm = () => {
   const [medications, setMedications] = useState("");
   const [exercises, setExercises] = useState("");
   const [meals, setMeals] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleRegister = async () => {
     if (password !== confirmPassword) {
-      alert("비밀번호가 일치하지 않습니다.");
+      alert("오류가 발생했습니다 다시시도해주세요.");
       return;
     }
 
@@ -126,14 +145,16 @@ const RegisterForm = () => {
 
   return (
     <>
-      <RegisterWrap>
-        <TextWrap>
-          <FooterIcon src={footerLogo} />
-          <span style={{ color: "#ff832b" }}>다! </span>했슈 계정 만들기
-        </TextWrap>
-        <ContextWrap>회원가입을 통해 다했슈 멤버가 되어보세요!</ContextWrap>
-        <Divider />
-      </RegisterWrap>
+      <AnimatedContainer isVisible={isVisible}>
+        <RegisterWrap>
+          <TextWrap>
+            <FooterIcon src={footerLogo} />
+            <span style={{ color: "#ff832b" }}>다! </span>했슈 계정 만들기
+          </TextWrap>
+          <ContextWrap>회원가입을 통해 다했슈 멤버가 되어보세요!</ContextWrap>
+          <Divider />
+        </RegisterWrap>
+      </AnimatedContainer>
       <RegisterMyInfo
         username={username}
         setUsername={setUsername}
