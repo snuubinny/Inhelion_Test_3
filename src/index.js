@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Inhelion_Test_2">
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Main />} />

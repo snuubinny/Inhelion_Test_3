@@ -4,6 +4,24 @@ import styled from "styled-components";
 import axios from "axios";
 import footerLogo from "../img/Footer_Logo.png";
 import Test from "../components/Test";
+import { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const AnimatedContainer = styled.div`
+  animation: ${fadeIn} 0.5s ease-out;
+  opacity: 1;
+  transform: translateY(0);
+`;
 
 const LoginBg = `${process.env.PUBLIC_URL}/Loginbg2.png`;
 
@@ -191,7 +209,7 @@ function LoginForm() {
     console.log("ID:", "dahyesuk52");
     console.log("Password:", "dahae01");
   };
-
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <>
       <LoginContainer>
@@ -202,34 +220,37 @@ function LoginForm() {
             "노인에게 다정한 건강관리 service"
           </ServiceText>
         </TitleTextBox>
-        <LoginBox>
-          <TitleBox>
-            <LogoIcon src={footerLogo} />
-            회원 로그인
-          </TitleBox>
-          <Line />
-          <FormBox>
-            <IdBox
-              placeholder=" 아이디를 입력하세요"
-              type="text"
-              value={id}
-              onChange={(e) => setId(e.target.value)}
-            />
-            <PwBox
-              placeholder=" 비밀번호를 입력하세요"
-              type="password"
-              value={pw}
-              onChange={(e) => setPw(e.target.value)}
-            />
-          </FormBox>
-          <LoginButton onClick={handleLoginClick}>로 그 인</LoginButton>
-          <Line />
-          <MiddleText>아직 회원이 아니신가요?</MiddleText>
-          <RegisterButton onClick={handleRegisterClick}>
-            회원가입하기
-          </RegisterButton>
-        </LoginBox>
+        <AnimatedContainer isVisible={isVisible}>
+          <LoginBox>
+            <TitleBox>
+              <LogoIcon src={footerLogo} />
+              회원 로그인
+            </TitleBox>
+            <Line />
+            <FormBox>
+              <IdBox
+                placeholder=" 아이디를 입력하세요"
+                type="text"
+                value={id}
+                onChange={(e) => setId(e.target.value)}
+              />
+              <PwBox
+                placeholder=" 비밀번호를 입력하세요"
+                type="password"
+                value={pw}
+                onChange={(e) => setPw(e.target.value)}
+              />
+            </FormBox>
+            <LoginButton onClick={handleLoginClick}>로 그 인</LoginButton>
+            <Line />
+            <MiddleText>아직 회원이 아니신가요?</MiddleText>
+            <RegisterButton onClick={handleRegisterClick}>
+              회원가입하기
+            </RegisterButton>
+          </LoginBox>
+        </AnimatedContainer>
       </LoginContainer>
+
       <Test fillTestCredentials={fillTestCredentials} />
     </>
   );
