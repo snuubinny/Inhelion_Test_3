@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/Inhelion_Test_3/static/css/main.1c10cfdb.css",
+    "main.js": "/Inhelion_Test_3/static/js/main.c9410465.js",
+    "static/media/MainPage.png": "/Inhelion_Test_3/static/media/MainPage.1985ed01ac710a9d5943.png",
+    "static/media/Safe.png": "/Inhelion_Test_3/static/media/Safe.1114a96c2c8bb54cc921.png",
+    "static/media/Developers.png": "/Inhelion_Test_3/static/media/Developers.1adbd105f12d17787ff7.png",
+    "static/media/pen.png": "/Inhelion_Test_3/static/media/pen.8c177be6da3b1cd0f96e.png",
+    "static/media/sleep.png": "/Inhelion_Test_3/static/media/sleep.5f6344eadd001b5e1fee.png",
+    "static/media/woman.png": "/Inhelion_Test_3/static/media/woman.e072870e8b4ac800bf8a.png",
+    "static/media/man.png": "/Inhelion_Test_3/static/media/man.0f097e58f293521a6111.png",
+    "static/media/medicine.png": "/Inhelion_Test_3/static/media/medicine.f94a5ead28c36b035b1a.png",
+    "static/media/meal.png": "/Inhelion_Test_3/static/media/meal.6c45253dd1ef3841a091.png",
+    "static/media/exercise.png": "/Inhelion_Test_3/static/media/exercise.0a1ade7c5c5575241272.png",
+    "static/media/instagram.png": "/Inhelion_Test_3/static/media/instagram.d57e44d01a17b44a9cc3.png",
+    "static/media/hand.png": "/Inhelion_Test_3/static/media/hand.1873ad686d2a41fe94b5.png",
+    "static/media/cat.png": "/Inhelion_Test_3/static/media/cat.23b3eac1c5d2867cfc11.png",
+    "static/media/blog.png": "/Inhelion_Test_3/static/media/blog.779b5f355a1833c4ccff.png",
+    "static/media/Footer_Logo.png": "/Inhelion_Test_3/static/media/Footer_Logo.6b10089c24c2122f184f.png",
+    "static/media/NavBar_Logo.png": "/Inhelion_Test_3/static/media/NavBar_Logo.a5da21ac4670b215e5e0.png",
+    "static/media/25percent.png": "/Inhelion_Test_3/static/media/25percent.2e08c073e5ca33c43518.png",
+    "static/media/50percent.png": "/Inhelion_Test_3/static/media/50percent.8789949b8496f9276c61.png",
+    "static/media/100percent.png": "/Inhelion_Test_3/static/media/100percent.24142ea531bf06e046e6.png",
+    "static/media/75percent.png": "/Inhelion_Test_3/static/media/75percent.61fbf0e30c0c3ef7ed8d.png",
+    "static/media/0percent.png": "/Inhelion_Test_3/static/media/0percent.9d9ff97496f364569c24.png",
+    "static/media/github.png": "/Inhelion_Test_3/static/media/github.6c5d8675c0948005e707.png",
+    "index.html": "/Inhelion_Test_3/index.html",
+    "main.1c10cfdb.css.map": "/Inhelion_Test_3/static/css/main.1c10cfdb.css.map",
+    "main.c9410465.js.map": "/Inhelion_Test_3/static/js/main.c9410465.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c10cfdb.css",
+    "static/js/main.c9410465.js"
+  ]
+}
